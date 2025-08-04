@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ResetButton : MonoBehaviour
 {
@@ -16,5 +17,10 @@ public class ResetButton : MonoBehaviour
 #else
         Application.Quit();
 #endif
+    }
+
+    public void StartButton()
+    {
+        SceneManager.LoadScene("SpaceInvader");
     }
 }

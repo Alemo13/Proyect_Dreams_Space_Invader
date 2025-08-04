@@ -9,8 +9,13 @@ public class LevelUIManager : MonoBehaviour
     public GameObject victoryPanel;
     public GameObject gameoverPanel;
 
+    public AudioClip victoryClip;
+    private AudioSource audioSource;
+
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         UpdateLevelText();
         UpdateScoreText();
         UpdateLivesText();
@@ -34,6 +39,10 @@ public class LevelUIManager : MonoBehaviour
         GameManager.Instance.lives++;
         if (GameManager.Instance.level >= GameManager.Instance.maxLevel)
         {
+            if (audioSource != null && victoryClip != null)
+            {
+                audioSource.PlayOneShot(victoryClip);
+            }
             victoryPanel.SetActive(true);
             Time.timeScale = 0;
             ScoreManager.Instance.MaxScoreUpdate();
