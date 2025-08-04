@@ -31,6 +31,7 @@ public class LevelUIManager : MonoBehaviour
 
     public IEnumerator ShowCountdown(string[] message, float delay = 1f)
     {
+        GameManager.Instance.lives++;
         if (GameManager.Instance.level >= GameManager.Instance.maxLevel)
         {
             victoryPanel.SetActive(true);

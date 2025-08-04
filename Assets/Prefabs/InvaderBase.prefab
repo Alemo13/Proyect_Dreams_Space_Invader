@@ -173,5 +173,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyBullet: {fileID: 7583652405038692040, guid: 666556e3262520549b219a3429d72097, type: 3}
   spawnTimer: 0
-  spawnMax: 5
-  spawnMin: 3
+  spawnMax: 8
+  spawnMin: 4
